@@ -1,15 +1,18 @@
 """
-ATO Tax Assistant — FastAPI endpoints (production-hardened).
+ATO Search Assistant — FastAPI endpoints (production v3).
 
-Usage:
-    cd ATO-RAG_Pipeline
-    python -m uvicorn api.app:app --host 0.0.0.0 --port 8000
+Intelligence pipeline:
+    User query → Preprocess (spell fix, intent, query expansion) → Multi-search → Generate
 
-Environment:
-    Requires OPENAI_API_KEY in .env or environment.
-    See config/settings.py for all configuration.
+Features:
+    - Query understanding: figures out what the user actually needs
+    - Query expansion: generates 2-3 search queries to cover all angles
+    - Conversation memory: understands follow-up questions
+    - Spell correction + intent routing
+    - Structured logging with request tracing
 """
 
+import json
 import re
 import time
 import uuid
@@ -20,7 +23,7 @@ from typing import List, Dict, Optional
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -41,8 +44,7 @@ logging.basicConfig(
 log = logging.getLogger("ato-rag")
 
 
-# ──────────────────── Startup / Shutdown ────────────────────
-# Track components that loaded successfully
+# ──────────────────── State ────────────────────
 _state = {
     "reranker": None,
     "retriever_ok": False,
@@ -55,18 +57,14 @@ _state = {
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Runs on startup and shutdown. Validates config, loads models."""
     _state["start_time"] = time.time()
 
-    # 1. Validate config
     config_errors = validate_config()
     for err in config_errors:
         log.error(f"CONFIG  │ {err}")
     if any("OPENAI_API_KEY" in e for e in config_errors):
-        log.error("CONFIG  │ Cannot start without OPENAI_API_KEY. Exiting.")
         raise RuntimeError("Missing OPENAI_API_KEY")
 
-    # 2. Load reranker
     try:
         from retrieval.reranker import Reranker
         _state["reranker"] = Reranker()
@@ -74,7 +72,6 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         log.warning(f"STARTUP │ Reranker unavailable: {e}")
 
-    # 3. Verify retriever works
     try:
         from retrieval.retriever import retrieve
         _ = retrieve("test", reranker=None)
@@ -83,7 +80,6 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         log.error(f"STARTUP │ Retriever failed: {e}")
 
-    # 4. Verify LLM connectivity
     try:
         import openai
         test_client = openai.OpenAI(api_key=OPENAI_API_KEY, timeout=10)
@@ -93,11 +89,6 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         log.warning(f"STARTUP │ LLM check failed: {e}")
 
-    index_warnings = [e for e in config_errors if "not found" in e]
-    if index_warnings:
-        for w in index_warnings:
-            log.warning(f"STARTUP │ {w}")
-
     log.info("STARTUP │ Ready ✓")
     yield
     log.info("SHUTDOWN │ Goodbye")
@@ -106,8 +97,8 @@ async def lifespan(app: FastAPI):
 # ──────────────────── App ────────────────────
 app = FastAPI(
     title="ATO Search Assistant",
-    version="1.0.0",
-    description="RAG-powered search system for official ATO information",
+    version="3.0.0",
+    description="RAG-powered search system with intelligent query expansion",
     lifespan=lifespan,
 )
 
@@ -120,34 +111,30 @@ app.add_middleware(
 )
 
 
-# ──────────────────── Middleware: request tracing + timing ────────────────────
+# ──────────────────── Middleware ────────────────────
 @app.middleware("http")
 async def request_middleware(request: Request, call_next):
     request_id = str(uuid.uuid4())[:8]
     request.state.request_id = request_id
     t0 = time.time()
-
     response = await call_next(request)
-
     elapsed = round((time.time() - t0) * 1000)
     response.headers["X-Request-ID"] = request_id
     response.headers["X-Response-Time"] = f"{elapsed}ms"
-
     _state["request_count"] += 1
-
-    # Log all requests except /health (too noisy)
-    if request.url.path != "/health":
-        log.info(
-            f"REQ {request_id} │ {request.method} {request.url.path} │ "
-            f"{response.status_code} │ {elapsed}ms"
-        )
-
+    if request.url.path not in ("/health", "/"):
+        log.info(f"REQ {request_id} │ {request.method} {request.url.path} │ {response.status_code} │ {elapsed}ms")
     return response
 
 
-# ──────────────────── Request / Response Schemas ────────────────────
+# ──────────────────── Schemas ────────────────────
+class Message(BaseModel):
+    role: str
+    content: str
+
 class AskRequest(BaseModel):
-    q: str = Field(..., min_length=1, max_length=500, description="Tax question")
+    q: str = Field(..., min_length=1, max_length=500)
+    messages: Optional[List[Message]] = Field(default=None)
 
 class Reference(BaseModel):
     ref_number: int
@@ -187,15 +174,11 @@ _llm_client = None
 def _get_llm_client() -> openai.OpenAI:
     global _llm_client
     if _llm_client is None:
-        _llm_client = openai.OpenAI(
-            api_key=OPENAI_API_KEY,
-            timeout=LLM_TIMEOUT,
-        )
+        _llm_client = openai.OpenAI(api_key=OPENAI_API_KEY, timeout=LLM_TIMEOUT)
     return _llm_client
 
 
 def call_llm(prompt: str, request_id: str = "") -> tuple:
-    """Call OpenAI API. Returns (response_text, error_string)."""
     try:
         t0 = time.time()
         response = _get_llm_client().chat.completions.create(
@@ -211,32 +194,166 @@ def call_llm(prompt: str, request_id: str = "") -> tuple:
         text = response.choices[0].message.content.strip()
         tokens_in = response.usage.prompt_tokens if response.usage else 0
         tokens_out = response.usage.completion_tokens if response.usage else 0
+        log.info(f"LLM {request_id} │ {LLM_MODEL} │ {tokens_in}→{tokens_out} tokens │ {elapsed}ms")
+        return text, ""
+    except openai.AuthenticationError:
+        return "", "LLM authentication failed."
+    except openai.RateLimitError:
+        return "", "LLM rate limited. Try again."
+    except openai.APITimeoutError:
+        return "", "LLM request timed out."
+    except openai.APIConnectionError:
+        return "", "Cannot reach LLM service."
+    except Exception as e:
+        log.error(f"LLM {request_id} │ {repr(e)}")
+        return "", "An unexpected error occurred."
+
+
+def call_llm_quick(prompt: str) -> str:
+    """Lightweight LLM call for preprocessing."""
+    try:
+        response = _get_llm_client().chat.completions.create(
+            model=LLM_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0,
+            max_tokens=200,
+        )
+        return response.choices[0].message.content.strip()
+    except:
+        return ""
+
+
+# ──────────────────── Query Intelligence ────────────────────
+
+def understand_and_expand(query: str, messages: Optional[List[Message]], request_id: str = "") -> dict:
+    """
+    Single LLM call that:
+    1. Fixes spelling
+    2. Classifies intent (tax_question vs general_chat)
+    3. Understands what the user ACTUALLY needs to know
+    4. Generates 1-3 search queries to cover all relevant angles
+    5. Handles follow-up questions using conversation history
+
+    Returns: {
+        "intent": "tax_question" | "general_chat",
+        "understood_need": "what the user actually needs",
+        "search_queries": ["query1", "query2", "query3"],
+        "response": "direct response for general_chat"
+    }
+    """
+    history_block = ""
+    if messages and len(messages) >= 2:
+        recent = messages[-6:]
+        history_block = "Recent conversation:\n" + "\n".join(
+            f"{'User' if m.role == 'user' else 'Assistant'}: {m.content[:300]}"
+            for m in recent
+        ) + "\n\n"
+
+    prompt = f"""{history_block}The user says: "{query}"
+
+You are a query understanding system for an Australian tax information search engine.
+
+Analyze this query and return a JSON object:
+{{
+    "intent": "tax_question" or "general_chat",
+    "understood_need": "What does the user actually need to know? Think beyond the literal question.",
+    "search_queries": ["query1", "query2", "query3"],
+    "response": "Only for general_chat - a brief friendly response. Empty string for tax questions."
+}}
+
+Rules:
+- - "general_chat" has TWO sub-types. Handle them differently in the "response" field:
+  a) FRIENDLY: greetings (hi, hello, how are you, good morning), thanks (thank you, cheers), who are you → Give a warm friendly reply. Examples: "Hi! I'm the ATO Search Assistant. Ask me anything about Australian tax!", "You're welcome! Let me know if you have more tax questions.", "I'm doing great! How can I help with your tax question today?"
+  b) OFF-TOPIC: questions about non-tax topics (programming, science, cooking, sports, general knowledge like "what is a linked list") → Politely redirect: "I'm the ATO Search Assistant — I can only help with Australian tax questions like TFN, ABN, GST, deductions, super, and more. How can I help with your tax question?"
+- Questions about starting a business, freelancing, gig work (Uber, delivery, rideshare, contracting), or "what do I need to do X" are ALWAYS tax_question — the user needs to know about ABN, TFN, GST, sole trader obligations etc.
+- "tax_question" = anything about Australian tax, ATO, TFN, ABN, GST, super, deductions, income, business.
+
+CRITICAL for search_queries:
+- Think about what the user ACTUALLY needs, not just what they literally asked.
+- Example: "can I Uber with a TFN?" → The user wants to start Uber delivery. They need to know about:
+  1. "ABN requirements for Uber Eats food delivery driver" (they probably need an ABN, not just TFN)
+  2. "sole trader tax obligations gig economy" (how to report the income)
+  3. "GST registration threshold ride sharing delivery" (when GST kicks in)
+- Generate 1-3 search queries that cover ALL aspects the user should know about.
+- Each query should be specific enough to find relevant ATO pages.
+- For simple questions ("what is a TFN?"), one query is fine.
+
+Return ONLY valid JSON."""
+
+    raw = call_llm_quick(prompt)
+
+    try:
+        cleaned = raw.strip()
+        if cleaned.startswith("```"):
+            cleaned = cleaned.split("\n", 1)[1] if "\n" in cleaned else cleaned[3:]
+        if cleaned.endswith("```"):
+            cleaned = cleaned[:-3]
+        cleaned = cleaned.strip()
+
+        result = json.loads(cleaned)
+        intent = result.get("intent", "tax_question")
+        understood = result.get("understood_need", query)
+        queries = result.get("search_queries", [query])
+        direct_response = result.get("response", "")
+
+        # Ensure we have at least one query
+        if not queries:
+            queries = [query]
+
+        # Cap at 3 queries
+        queries = queries[:3]
 
         log.info(
-            f"LLM {request_id} │ {LLM_MODEL} │ "
-            f"{tokens_in}→{tokens_out} tokens │ {elapsed}ms"
+            f"UNDERSTAND {request_id} │ intent={intent} │ "
+            f"need='{understood[:60]}' │ queries={queries}"
         )
-        return text, ""
 
-    except openai.AuthenticationError:
-        log.error(f"LLM {request_id} │ Authentication failed — check OPENAI_API_KEY")
-        return "", "LLM authentication failed. Check API key configuration."
+        return {
+            "intent": intent,
+            "understood_need": understood,
+            "search_queries": queries,
+            "response": direct_response,
+        }
+    except (json.JSONDecodeError, KeyError, TypeError) as e:
+        log.warning(f"UNDERSTAND {request_id} │ Parse failed: {e}")
+        return {
+            "intent": "tax_question",
+            "understood_need": query,
+            "search_queries": [query],
+            "response": "",
+        }
 
-    except openai.RateLimitError:
-        log.warning(f"LLM {request_id} │ Rate limited by OpenAI")
-        return "", "LLM rate limited. Please try again in a moment."
 
-    except openai.APITimeoutError:
-        log.warning(f"LLM {request_id} │ Timeout after {LLM_TIMEOUT}s")
-        return "", "LLM request timed out. Please try again."
+def multi_retrieve(queries: List[str], reranker) -> List[Dict]:
+    """
+    Run multiple search queries and merge results.
+    Deduplicates by URL+text, keeps the highest-scored version.
+    """
+    from retrieval.retriever import retrieve
 
-    except openai.APIConnectionError:
-        log.error(f"LLM {request_id} │ Connection failed")
-        return "", "Cannot reach LLM service. Please try again later."
+    seen = {}  # key: (url, text[:100]) → value: result dict
+    all_results = []
 
-    except Exception as e:
-        log.error(f"LLM {request_id} │ Unexpected: {repr(e)}")
-        return "", "An unexpected error occurred generating the answer."
+    for q in queries:
+        try:
+            results = retrieve(q, reranker=reranker)
+            for r in results:
+                key = (r.get("url", ""), r.get("text", "")[:100])
+                if key not in seen:
+                    seen[key] = r
+                    all_results.append(r)
+        except Exception as e:
+            log.warning(f"MULTI-RETRIEVE │ Query '{q[:50]}' failed: {e}")
+            continue
+
+    # Sort by score (rerank_score if available, else score)
+    all_results.sort(
+        key=lambda x: x.get("rerank_score", x.get("score", 0)),
+        reverse=True,
+    )
+
+    # Return top results (more than usual since we merged multiple queries)
+    return all_results[:FINAL_TOPK + 3]  # A few extra for richer evidence
 
 
 # ──────────────────── Helpers ────────────────────
@@ -277,7 +394,6 @@ def build_references(results: List[Dict]) -> List[dict]:
 
 @app.get("/health", response_model=HealthResponse)
 def health():
-    """Health check — shows component status and basic metrics."""
     uptime = int(time.time() - _state["start_time"]) if _state["start_time"] else 0
     return {
         "ok": _state["retriever_ok"] and _state["llm_ok"],
@@ -293,14 +409,31 @@ def health():
 
 @app.post("/ask", response_model=AskResponse)
 def ask(body: AskRequest, request: Request):
-    """Main RAG endpoint — retrieves evidence and generates an answer."""
+    """
+    Intelligent RAG endpoint.
+
+    Pipeline: Understand → Expand queries → Multi-search → Generate
+    """
     request_id = getattr(request.state, "request_id", "?")
     t0 = time.time()
 
-    # 1. Retrieve
+    # ── Step 1: Understand intent + expand queries ──
+    understood = understand_and_expand(body.q, body.messages, request_id)
+
+    # Handle general conversation (no retrieval)
+    if understood["intent"] == "general_chat" and understood["response"]:
+        return AskResponse(
+            answer=understood["response"],
+            status="general_chat",
+            references=[],
+            disclaimer="",
+            request_id=request_id,
+            elapsed_ms=round((time.time() - t0) * 1000),
+        )
+
+    # ── Step 2: Multi-query retrieval ──
     try:
-        from retrieval.retriever import retrieve
-        results = retrieve(body.q, reranker=_state["reranker"])
+        results = multi_retrieve(understood["search_queries"], _state["reranker"])
     except Exception as e:
         _state["error_count"] += 1
         log.error(f"RETRIEVE {request_id} │ {repr(e)}")
@@ -313,12 +446,14 @@ def ask(body: AskRequest, request: Request):
             elapsed_ms=round((time.time() - t0) * 1000),
         )
 
-    log.info(f"RETRIEVE {request_id} │ {len(results)} passages for: {body.q[:80]}")
+    log.info(
+        f"RETRIEVE {request_id} │ {len(results)} passages from "
+        f"{len(understood['search_queries'])} queries"
+    )
 
-    # 2. Handle no results
     if not results:
         return AskResponse(
-            answer="I couldn't find relevant ATO information for that question. Please try rephrasing or check ato.gov.au directly.",
+            answer="I couldn't find relevant ATO information. Please try rephrasing or check ato.gov.au.",
             status="no_results",
             references=[],
             disclaimer=DISCLAIMER,
@@ -326,12 +461,37 @@ def ask(body: AskRequest, request: Request):
             elapsed_ms=round((time.time() - t0) * 1000),
         )
 
-    # 3. Generate answer
+    # ── Step 3: Generate answer with full context ──
     evidence_text = format_evidence(results)
+
+    # Conversation history for context
+    history_block = ""
+    if body.messages and len(body.messages) >= 2:
+        recent = body.messages[-6:]
+        history_block = (
+            "Recent conversation:\n"
+            + "\n".join(
+                f"{'User' if m.role == 'user' else 'Assistant'}: {m.content[:500]}"
+                for m in recent
+            )
+            + "\n\n"
+        )
+
+    # Tell the LLM what we understood so it answers comprehensively
+    need_hint = ""
+    if understood["understood_need"] != body.q:
+        need_hint = (
+            f"(System note: The user's underlying need is: {understood['understood_need']}. "
+            f"Make sure your answer covers this comprehensively, not just the literal question.)\n\n"
+        )
+
     prompt = (
+        f"{history_block}"
+        f"{need_hint}"
         f"Question: {body.q}\n\n"
         f"Evidence from ato.gov.au:\n{evidence_text}\n\n"
-        f"Please answer using the evidence above. Use [1], [2] etc to cite sources."
+        f"Answer the user's question using the evidence. Use [1], [2] etc to cite sources. "
+        f"Cover all aspects they need to know, even if they didn't explicitly ask."
     )
 
     answer, err = call_llm(prompt, request_id)
@@ -350,7 +510,6 @@ def ask(body: AskRequest, request: Request):
 
     answer = clean_answer(answer)
 
-    # Append disclaimer if model didn't include one
     if "general information" not in answer.lower() and "professional" not in answer.lower():
         answer += f"\n\n{DISCLAIMER}"
 
@@ -369,7 +528,6 @@ def ask(body: AskRequest, request: Request):
 
 @app.post("/search")
 def search_only(body: SearchRequest, request: Request):
-    """Retrieval-only endpoint — no LLM call."""
     request_id = getattr(request.state, "request_id", "?")
     try:
         from retrieval.retriever import retrieve
@@ -391,16 +549,11 @@ def search_only(body: SearchRequest, request: Request):
         }
     except Exception as e:
         _state["error_count"] += 1
-        log.error(f"SEARCH {request_id} │ {repr(e)}")
-        return JSONResponse(
-            status_code=500,
-            content={"error": "Search failed. Please try again.", "request_id": request_id},
-        )
+        return JSONResponse(status_code=500, content={"error": "Search failed."})
 
 
 @app.get("/diag")
 def diag(q: str = "How do I apply for a TFN?"):
-    """Debug endpoint — shows retrieval internals."""
     try:
         from retrieval.retriever import retrieve
         results = retrieve(q, reranker=_state["reranker"])
@@ -422,24 +575,27 @@ def diag(q: str = "How do I apply for a TFN?"):
             ],
         }
     except Exception as e:
-        log.error(f"DIAG │ {repr(e)}")
-        return JSONResponse(
-            status_code=500,
-            content={"error": "Diagnostics failed.", "detail": repr(e)},
-        )
+        return JSONResponse(status_code=500, content={"error": "Diagnostics failed."})
 
 
-# ──────────────────── Global Error Handler ────────────────────
+# ──────────────────── Error Handler ────────────────────
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
-    """Catch-all so users never see raw stack traces."""
     request_id = getattr(request.state, "request_id", "?")
     _state["error_count"] += 1
     log.error(f"UNHANDLED {request_id} │ {repr(exc)}\n{traceback.format_exc()}")
     return JSONResponse(
         status_code=500,
-        content={
-            "error": "Something went wrong. Please try again.",
-            "request_id": request_id,
-        },
+        content={"error": "Something went wrong.", "request_id": request_id},
     )
+
+
+# ──────────────────── Serve Frontend ────────────────────
+FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
+
+@app.get("/")
+def serve_frontend():
+    index = FRONTEND_DIR / "tax-advisor.html"
+    if index.exists():
+        return FileResponse(index)
+    return {"message": "ATO Search Assistant API is running."}
