@@ -1,0 +1,2933 @@
+{
+  "timestamp": "2026-04-20T12:37:42.560762",
+  "n": 100,
+  "retrieval": {
+    "hit_rate": 0.92,
+    "mrr": 0.79,
+    "r1": 0.7,
+    "r3": 0.87,
+    "r5": 0.92,
+    "kw": 0.895
+  },
+  "tiers": {
+    "T1": {
+      "hit": 0.85,
+      "mrr": 0.717
+    },
+    "T2": {
+      "hit": 0.967,
+      "mrr": 0.868
+    },
+    "T3": {
+      "hit": 1.0,
+      "mrr": 0.829
+    },
+    "T4": {
+      "hit": 0.9,
+      "mrr": 0.775
+    }
+  },
+  "search_comparison": {},
+  "results": [
+    {
+      "id": 1,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "What is the tax-free threshold?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.38,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "How to claim the tax-free threshold",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/how-to-claim-the-tax-free-threshold"
+        },
+        {
+          "title": "New to tax and super",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/new-to-tax-and-super"
+        },
+        {
+          "title": "Multiple jobs or change of job",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/multiple-jobs-or-change-of-job"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "What are the current income tax rates for Australian residents?",
+      "retrieval": {
+        "url_match": false,
+        "rank": null,
+        "mrr": 0.0,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 4.14,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Australian resident for tax purposes",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency/australian-resident-for-tax-purposes"
+        },
+        {
+          "title": "Taxation of Australian resident WHMs from NDA countries",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/taxation-of-australian-resident-whms-from-nda-countries"
+        },
+        {
+          "title": "Do you need to lodge a tax return? 2017",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2017/before-you-start/do-you-need-to-lodge-a-tax-return-2017"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "Am I an Australian resident for tax purposes?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.31,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Australian resident for tax purposes",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency/australian-resident-for-tax-purposes"
+        },
+        {
+          "title": "Completing individual information on your tax return 2017",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2017/tax-return/completing-individual-information-on-your-tax-return-2017"
+        },
+        {
+          "title": "Your residency status and CGT",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/your-residency-status-and-cgt"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "Do I need to lodge a tax return?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.58,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Lodge your first tax return",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/how-to-lodge-your-tax-return/lodging-your-first-tax-return"
+        },
+        {
+          "title": "How to work out if you need to lodge a tax return",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/before-you-prepare-your-tax-return/how-to-work-out-if-you-need-to-lodge-a-tax-return"
+        },
+        {
+          "title": "Lodge your first tax return",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/how-to-lodge-your-tax-return/lodging-your-first-tax-return"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "When is the tax return deadline?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.39,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Lodge with a registered tax agent",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/how-to-lodge-your-tax-return/lodge-your-tax-return-with-a-registered-tax-agent"
+        },
+        {
+          "title": "Time is running out to lodge the NFP self-review return",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/small-business-newsroom/time-is-running-out-to-lodge-the-nfp-self-review-return"
+        },
+        {
+          "title": "Checklist - tax return 2024",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2024/supporting-information/checklist-tax-return-2024"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "What income do I need to declare?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.03,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Amounts you do not include as income",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/amounts-you-do-not-include-as-income"
+        },
+        {
+          "title": "Rental income you must declare",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-income-you-must-declare"
+        },
+        {
+          "title": "Taxable, assessable and exempt income",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/taxable-assessable-and-exempt-income"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "How do I claim the tax-free threshold?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 5.13,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "How to claim the tax-free threshold",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/how-to-claim-the-tax-free-threshold"
+        },
+        {
+          "title": "A1 - Under 18 2011",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2011/tax-return/adjustments/a1-under-18-2011"
+        },
+        {
+          "title": "A1 Under 18 2016",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2016/tax-return/adjustment-questions-a1-a3/a1-under-18-2016"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "What is the tax rate for non-residents?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 6.12,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Franchising and tax",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/franchising-and-tax"
+        },
+        {
+          "title": "Taxation of Australian resident WHMs from NDA countries",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/taxation-of-australian-resident-whms-from-nda-countries"
+        },
+        {
+          "title": "Next 5,000 Streamlined assurance reviews",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/what-you-should-know/tax-performance-programs-for-private-groups/next-5000-private-groups-tax-performance-program/next-5000-streamlined-assurance-reviews"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "Can I claim the tax-free threshold from two employers?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 1.0
+      },
+      "latency": 6.2,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "New to tax and super",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/new-to-tax-and-super"
+        },
+        {
+          "title": "Paying tax on multiple sources of income",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/paying-tax-on-multiple-sources-of-income"
+        },
+        {
+          "title": "Multiple jobs or change of job",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/multiple-jobs-or-change-of-job"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "tier": "T1",
+      "category": "income_tax",
+      "question": "What is PAYG withholding?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.02,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "What trustees need to do",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/trusts/trusts-registration-and-reporting-obligations/closely-held-trusts/tfn-withholding-for-closely-held-trusts/what-trustees-need-to-do"
+        },
+        {
+          "title": "PAYG withholding annual reports",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/annual-reporting"
+        },
+        {
+          "title": "Withholding in business transactions",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/dealing-with-suppliers/withholding-in-business-transactions"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim work from home expenses?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 3,
+        "mrr": 0.3333333333333333,
+        "kw_recall": 1.0
+      },
+      "latency": 4.58,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "ADF member expenses T–W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/a-d/australian-defence-force-members-income-and-work-related-deductions/deductions-for-work-expenses/adf-member-expenses-tw"
+        },
+        {
+          "title": "Performing artist expenses T–W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/performing-artists-income-and-work-related-deductions/deductions-for-work-expenses/performing-artist-expenses-tw"
+        },
+        {
+          "title": "Occupancy expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/occupancy-expenses"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "What is the fixed rate for working from home?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 4,
+        "mrr": 0.25,
+        "kw_recall": 1.0
+      },
+      "latency": 4.67,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "D5 Other work-related expenses 2023",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2023/tax-return/deduction-questions-d1-d10/d5-other-work-related-expenses-2023"
+        },
+        {
+          "title": "2022 Non-resident foreign income",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2022/reporting-non-resident-foreign-income/non-resident-foreign-income-amendment"
+        },
+        {
+          "title": "myTax 2025 Non-resident foreign income",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2025/reporting-non-resident-foreign-income/non-resident-foreign-income"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim car expenses for driving to work?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.75
+      },
+      "latency": 5.06,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Expenses for a car you own or lease",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/cars-transport-and-travel/motor-vehicle-and-car-expenses/expenses-for-a-car-you-own-or-lease"
+        },
+        {
+          "title": "Media professional expenses A–F",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/media-professionals-income-and-work-related-deductions/deductions-for-work-expenses/media-professional-expenses-af"
+        },
+        {
+          "title": "myTax 2019 Work-related travel expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2019/deductions/work-related-expenses/travel-expenses"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "What is the cents per kilometre method for car expenses?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.06,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Cents per kilometre method",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/deductions/deductions-for-motor-vehicle-expenses/cents-per-kilometre-method"
+        },
+        {
+          "title": "Work-related car expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2016/deductions/work-related-expenses/car-expenses"
+        },
+        {
+          "title": "myTax 2022 Work-related car expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2022/deductions/work-related-expenses/car-expenses"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim self-education expenses?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 3,
+        "mrr": 0.3333333333333333,
+        "kw_recall": 1.0
+      },
+      "latency": 5.36,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Lawyer expenses P–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/lawyers-income-and-work-related-deductions/deductions-for-work-expenses/lawyer-expenses-ps"
+        },
+        {
+          "title": "Building and construction employee expenses P–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/a-d/building-and-construction-employees-income-and-work-related-deductions/deductions-for-work-expenses/building-and-construction-employee-expenses-ps"
+        },
+        {
+          "title": "myTax 2022 Work-related self-education expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2022/deductions/work-related-expenses/self-education-expenses"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim uniform and clothing expenses?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.65,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Uniform and laundry expenses – supporting information",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/object-to-a-decision/what-to-include-in-your-objection/supporting-information-to-provide/deductions/uniform-and-laundry-expenses"
+        },
+        {
+          "title": "Uniform and laundry expenses – supporting information",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/object-to-a-decision/what-to-include-in-your-objection/supporting-information-to-provide/deductions/uniform-and-laundry-expenses"
+        },
+        {
+          "title": "Work-related clothing, laundry and dry-cleaning expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2014/deductions/work-related-expenses/uniform-clothing-and-laundry-expenses"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim phone and internet expenses for work?",
+      "retrieval": {
+        "url_match": false,
+        "rank": null,
+        "mrr": 0.0,
+        "kw_recall": 0.75
+      },
+      "latency": 4.34,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Engineer expenses P–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/e-k/engineers-income-and-work-related-deductions/deductions-for-work-expenses/engineer-expenses-ps"
+        },
+        {
+          "title": "Nurses and midwives expenses P–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/nurses-and-midwives-income-and-work-related-deductions/deductions-for-work-expenses/nurses-and-midwives-expenses-ps"
+        },
+        {
+          "title": "Call centre operator expenses P–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/a-d/call-centre-operators-income-and-work-related-deductions/deductions-for-work-expenses/call-centre-operator-expenses-ps"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "How much can I claim without receipts?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 1.0
+      },
+      "latency": 5.44,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "myTax 2024 Gifts or donations",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2024/deductions/deductions-for-donations-investments-and-managing-your-tax-affairs/gifts-or-donations"
+        },
+        {
+          "title": "Records you need to keep",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/records-you-need-to-keep"
+        },
+        {
+          "title": "myTax 2018 Gifts or donations",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2018/deductions/deductions-for-donations-investments-and-managing-your-tax/gifts-or-donations"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim donations as tax deductions?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.53,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "myTax 2025 Gifts or donations",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2025/deductions/deductions-for-donations-investments-and-managing-your-tax-affairs/gifts-or-donations"
+        },
+        {
+          "title": "D9 Gifts or donations 2015",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2015/tax-return/deduction-questions-d1-d10/d9-gifts-or-donations-2015"
+        },
+        {
+          "title": "myTax 2021 Gifts or donations",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2021/deductions/deductions-for-donations-investments-and-managing-your-tax/gifts-or-donations"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim travel expenses for work?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.03,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Overnight travel expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/cars-transport-and-travel/overnight-travel-expenses-and-allowances/overnight-travel-expenses"
+        },
+        {
+          "title": "Travel agent employee expenses T–W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/r-z/travel-agent-employees-income-and-work-related-deductions/deductions-for-work-expenses/travel-agent-employee-expenses-tw"
+        },
+        {
+          "title": "Retail industry expenses T–W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/r-z/retail-industry-workers-income-and-work-related-deductions/deductions-for-work-expenses/retail-industry-expenses-tw"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "What is the laundry deduction for work clothing?",
+      "retrieval": {
+        "url_match": false,
+        "rank": null,
+        "mrr": 0.0,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 5.53,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Real estate employee expenses G–O",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/r-z/real-estate-employees-income-and-work-related-deductions/deductions-for-work-expenses/real-estate-employee-expenses-go"
+        },
+        {
+          "title": "Sales and marketing industry expenses G–O",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/r-z/sales-and-marketing-managers-income-and-work-related-deductions/deductions-for-work-expenses/sales-and-marketing-industry-expenses-g-o"
+        },
+        {
+          "title": "Tradesperson expenses G–O",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/r-z/tradesperson-income-and-work-related-deductions/deductions-for-work-expenses/tradesperson-expenses-go"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim union fees?",
+      "retrieval": {
+        "url_match": false,
+        "rank": null,
+        "mrr": 0.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.59,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Mining site employee expenses T–W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/mining-site-employees-income-and-work-related-deductions/deductions-for-work-expenses/mining-site-employee-expenses-tw"
+        },
+        {
+          "title": "Documents to support and verify your claims",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/records-you-need-to-keep/documents-to-support-and-verify-your-claims"
+        },
+        {
+          "title": "Factory worker expenses T–W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/e-k/factory-workers-income-and-work-related-deductions/deductions-for-work-expenses/factory-worker-expenses-tw"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim the cost of tools for work?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 1.0
+      },
+      "latency": 6.12,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Tradies – be certain about what you can claim",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tradies-be-certain-about-what-you-can-claim"
+        },
+        {
+          "title": "Tools and equipment to perform your work",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/tools-computers-and-items-you-use-for-work/tools-and-equipment-to-perform-your-work"
+        },
+        {
+          "title": "Factory worker expenses T–W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/e-k/factory-workers-income-and-work-related-deductions/deductions-for-work-expenses/factory-worker-expenses-tw"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim sunscreen and sunglasses for work?",
+      "retrieval": {
+        "url_match": false,
+        "rank": null,
+        "mrr": 0.0,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 4.74,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Pilot expenses P–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/pilots-income-and-work-related-deductions/deductions-for-work-expenses/pilot-expenses-ps"
+        },
+        {
+          "title": "Guards and security workers expenses P–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/e-k/guards-and-security-workers-income-and-work-related-deductions/deductions-for-work-expenses/guards-and-security-workers-expenses-ps"
+        },
+        {
+          "title": "Fitness and sporting industry expenses R–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/e-k/fitness-and-sporting-industry-employees-income-and-work-related-deductions/deductions-for-work-expenses/fitness-and-sporting-industry-expenses-rs"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "tier": "T1",
+      "category": "deductions",
+      "question": "Can I claim the cost of a briefcase or laptop bag?",
+      "retrieval": {
+        "url_match": false,
+        "rank": null,
+        "mrr": 0.0,
+        "kw_recall": 1.0
+      },
+      "latency": 6.68,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Media professional expenses A–F",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/media-professionals-income-and-work-related-deductions/deductions-for-work-expenses/media-professional-expenses-af"
+        },
+        {
+          "title": "Lawyer expenses A–F",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/lawyers-income-and-work-related-deductions/deductions-for-work-expenses/lawyer-expenses-af"
+        },
+        {
+          "title": "Medical professional expenses T-W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/a-d/doctor-specialist-and-other-medical-professionals-income-and-work-related-deductions/deductions-for-work-expenses/medical-professional-expenses-t-w"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "tier": "T1",
+      "category": "super",
+      "question": "What is the superannuation guarantee rate?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.52,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Module 6: Rectifying late payments",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/super-for-employers/super-guarantee-employer-obligations-online-course/module-6-rectifying-late-payments"
+        },
+        {
+          "title": "Module 6: Rectifying late payments",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/super-for-employers/super-guarantee-employer-obligations-online-course/module-6-rectifying-late-payments"
+        },
+        {
+          "title": "Super guarantee annual employer compliance results",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/super-for-employers/measuring-super-guarantee-compliance/super-guarantee-annual-employer-compliance-results"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "tier": "T1",
+      "category": "super",
+      "question": "Can I access my super early?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.09,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Illegal early access to super",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/illegal-early-access-to-super"
+        },
+        {
+          "title": "When you can access your super early",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/when-you-can-access-your-super-early"
+        },
+        {
+          "title": "Accessing your super early may be illegal",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/small-business-newsroom/accessing-your-super-early-may-be-illegal"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "tier": "T1",
+      "category": "super",
+      "question": "What is the super contribution cap?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.75,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Concessional contributions cap",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/concessional-contributions-cap"
+        },
+        {
+          "title": "D12 Personal superannuation contributions 2018",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2018/supplementary-tax-return/deduction-questions-d11-d15/d12-personal-superannuation-contributions-2018"
+        },
+        {
+          "title": "myTax 2021 Personal superannuation contributions",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2021/deductions/other-deductions/personal-super-contributions"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "tier": "T1",
+      "category": "super",
+      "question": "What is a self-managed super fund?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.13,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Self-managed super funds",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/tax-governance/tax-governance-guide-for-privately-owned-groups/retirement-planning/self-managed-super-funds"
+        },
+        {
+          "title": "Structuring your business",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/tax-governance/tax-governance-guide-for-privately-owned-groups/starting-your-business/structuring-your-business"
+        },
+        {
+          "title": "Set up your SMSF bank account",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/setting-up-an-smsf/set-up-your-smsf-bank-account"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "tier": "T1",
+      "category": "super",
+      "question": "What is the First Home Super Saver Scheme?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 2.25,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "myTax 2022 First home super saver (FHSS) scheme",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2022/income/salary-wages-allowances-tips-bonuses-etc-including-lump-sums/first-home-super-saver-scheme"
+        },
+        {
+          "title": "First home super saver scheme",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/first-home-super-saver-scheme"
+        },
+        {
+          "title": "myTax 2022 Other income",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2022/income/other-income/other-income-not-listed-above"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "tier": "T1",
+      "category": "super",
+      "question": "Can I claim a tax deduction for super contributions?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.1,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "D12 Personal superannuation contributions 2018",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2018/supplementary-tax-return/deduction-questions-d11-d15/d12-personal-superannuation-contributions-2018"
+        },
+        {
+          "title": "Superannuation and foreign employment income",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/foreign-employment-income-and-section-23ag-employees/superannuation-and-foreign-employment-income"
+        },
+        {
+          "title": "Personal super contributions",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/personal-super-contributions"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "tier": "T1",
+      "category": "super",
+      "question": "What is the departing Australia superannuation payment?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 4,
+        "mrr": 0.25,
+        "kw_recall": 1.0
+      },
+      "latency": 4.55,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Working holiday makers",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers"
+        },
+        {
+          "title": "ATO-held super",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/keeping-track-of-your-super/ato-held-super"
+        },
+        {
+          "title": "Pacific Australia Labour Mobility scheme",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/pacific-australia-labour-mobility-scheme"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "tier": "T1",
+      "category": "super",
+      "question": "When can I access my super at retirement?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.29,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Super and planning for retirement",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/super-and-planning-for-retirement"
+        },
+        {
+          "title": "Accessing your super to retire",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/working-as-an-employee/leaving-the-workforce/accessing-your-super-to-retire"
+        },
+        {
+          "title": "Illegal early access to super",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/illegal-early-access-to-super"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "tier": "T1",
+      "category": "medicare",
+      "question": "What is the Medicare levy?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 6.35,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "What is the Medicare levy?",
+          "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/what-is-the-medicare-levy"
+        },
+        {
+          "title": "Paying tax on multiple sources of income",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/paying-tax-on-multiple-sources-of-income"
+        },
+        {
+          "title": "M2 - Medicare levy surcharge (MLS) 2013",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2013/tax-return/medicare-levy-questions-m1-m2/m2-medicare-levy-surcharge-2013"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "tier": "T1",
+      "category": "medicare",
+      "question": "What is the Medicare levy surcharge?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.87,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "myTax 2024 Medicare levy surcharge",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2024/medicare-and-private-health-insurance/medicare-levy-surcharge"
+        },
+        {
+          "title": "M2 Medicare levy surcharge (MLS) 2018",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2018/tax-return/medicare-levy-questions-m1-m2/m2-medicare-levy-surcharge-2018"
+        },
+        {
+          "title": "myTax 2025 Medicare levy surcharge",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2025/medicare-and-private-health-insurance/medicare-levy-surcharge"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "tier": "T1",
+      "category": "medicare",
+      "question": "Am I exempt from the Medicare levy?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.71,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "myTax 2017 Medicare items",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2017/medicare-and-private-health-insurance/medicare-items"
+        },
+        {
+          "title": "M1 - Medicare levy reduction or exemption 2013",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2013/tax-return/medicare-levy-questions-m1-m2/m1-medicare-levy-reduction-or-exemption-2013"
+        },
+        {
+          "title": "M1 Medicare levy reduction or exemption 2020",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2020/tax-return/medicare-levy-questions-m1-m2/m1-medicare-levy-reduction-or-exemption-2020"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "tier": "T1",
+      "category": "medicare",
+      "question": "What is the private health insurance rebate?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 3.41,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "myTax 2025 Private health insurance",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2025/medicare-and-private-health-insurance/private-health-insurance"
+        },
+        {
+          "title": "myTax 2024 Private health insurance",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2024/medicare-and-private-health-insurance/private-health-insurance"
+        },
+        {
+          "title": "Claiming the private health insurance rebate",
+          "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/private-health-insurance-rebate/claiming-the-private-health-insurance-rebate"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "tier": "T1",
+      "category": "medicare",
+      "question": "What income threshold applies for the Medicare levy surcharge?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 0.75
+      },
+      "latency": 4.3,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "What’s new this year? 2013",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2013/before-you-start/what-s-new-this-year-2013"
+        },
+        {
+          "title": "M2 - Medicare levy surcharge (MLS) 2013",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2013/tax-return/medicare-levy-questions-m1-m2/m2-medicare-levy-surcharge-2013"
+        },
+        {
+          "title": "M2 Medicare levy surcharge (MLS) 2015",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2015/tax-return/medicare-levy-questions-m1-m2/m2-medicare-levy-surcharge-2015"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "tier": "T1",
+      "category": "medicare",
+      "question": "Do I get a Medicare levy reduction for low income?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 4.2,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Medicare levy reduction for low-income earners",
+          "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-for-low-income-earners"
+        },
+        {
+          "title": "Medicare levy reduction – family income",
+          "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-family-income"
+        },
+        {
+          "title": "M1 Medicare levy reduction or exemption 2017",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2017/tax-return/medicare-levy-questions-m1-m2/m1-medicare-levy-reduction-or-exemption-2017"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "tier": "T1",
+      "category": "medicare",
+      "question": "How do I claim the Medicare levy exemption?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 4.12,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "M1 Medicare levy reduction or exemption 2018",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2018/tax-return/medicare-levy-questions-m1-m2/m1-medicare-levy-reduction-or-exemption-2018"
+        },
+        {
+          "title": "M1 Medicare levy reduction or exemption 2024",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2024/tax-return/medicare-levy-questions-m1-m2/m1-medicare-levy-reduction-or-exemption-2024"
+        },
+        {
+          "title": "Medical exemption from Medicare levy",
+          "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-exemption/medical-exemption-from-medicare-levy"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "tier": "T2",
+      "category": "whm",
+      "question": "What are the tax rates for working holiday makers?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 3.76,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Employer registration for working holiday makers",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/taxation-registrations/employer-registration-for-working-holiday-makers"
+        },
+        {
+          "title": "What’s new this year? 2017",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2017/before-you-start/what-s-new-this-year-2017"
+        },
+        {
+          "title": "Employers of working holiday makers (WHMs)",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/hiring-a-new-worker/employers-of-working-holiday-makers"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "tier": "T2",
+      "category": "whm",
+      "question": "What visa types qualify as working holiday maker?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 3.66,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Employers of working holiday makers (WHMs)",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/hiring-a-new-worker/employers-of-working-holiday-makers"
+        },
+        {
+          "title": "Employer registration for working holiday makers",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/taxation-registrations/employer-registration-for-working-holiday-makers"
+        },
+        {
+          "title": "Income types",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/in-detail/single-touch-payroll-phase-2-employer-reporting-guidelines/reporting-the-amounts-you-have-paid/income-types"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "tier": "T2",
+      "category": "whm",
+      "question": "Do working holiday makers get the tax-free threshold?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 0.75
+      },
+      "latency": 3.34,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "What’s new this year? 2017",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2017/before-you-start/what-s-new-this-year-2017"
+        },
+        {
+          "title": "Employer registration for working holiday makers",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/taxation-registrations/employer-registration-for-working-holiday-makers"
+        },
+        {
+          "title": "Working holiday makers",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "tier": "T2",
+      "category": "whm",
+      "question": "Can working holiday makers claim super when leaving Australia?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 1.0
+      },
+      "latency": 4.26,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Returning to your home country",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/returning-to-your-home-country"
+        },
+        {
+          "title": "ATO-held super",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/keeping-track-of-your-super/ato-held-super"
+        },
+        {
+          "title": "Departing Australia superannuation payment (DASP)",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/temporary-residents-and-superannuation/departing-australia-superannuation-payment-dasp"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "tier": "T2",
+      "category": "whm",
+      "question": "What is the tax residency for backpackers?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.3333333333333333
+      },
+      "latency": 5.17,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Residency – the resides test",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-resides-test"
+        },
+        {
+          "title": "Foreign and temporary resident income",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/foreign-and-worldwide-income/foreign-and-temporary-resident-income"
+        },
+        {
+          "title": "Operating a retirement village",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/assets-and-property/retirement-villages-and-tax/operating-a-retirement-village"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "tier": "T2",
+      "category": "whm",
+      "question": "Do I need a TFN as a working holiday maker?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 5.09,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "How to report employment and tax information through STP Phase 2",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/in-detail/single-touch-payroll-phase-2-employer-reporting-guidelines/how-to-report-employment-and-tax-information-through-stp-phase-2"
+        },
+        {
+          "title": "Employer registration for working holiday makers",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/taxation-registrations/employer-registration-for-working-holiday-makers"
+        },
+        {
+          "title": "Employer registration for working holiday makers",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/taxation-registrations/employer-registration-for-working-holiday-makers"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "tier": "T2",
+      "category": "cgt",
+      "question": "What is capital gains tax?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.76,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "What is capital gains tax?",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/what-is-capital-gains-tax"
+        },
+        {
+          "title": "18 Capital gains 2018",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2018/supplementary-tax-return/income-questions-13-24/18-capital-gains-2018"
+        },
+        {
+          "title": "Capital gains tax for business assets",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/assets-and-property/capital-gains-tax-for-business-assets"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "tier": "T2",
+      "category": "cgt",
+      "question": "Is my home subject to capital gains tax?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.43,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Using your home for rental or business",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/property-and-capital-gains-tax/your-main-residence-home/using-your-home-for-rental-or-business"
+        },
+        {
+          "title": "Home-based business and CGT implications",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/deductions/deductions-for-home-based-business-expenses/home-based-business-and-cgt-implications"
+        },
+        {
+          "title": "Home on more than 2 hectares",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/property-and-capital-gains-tax/your-main-residence-home/home-on-more-than-2-hectares"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "tier": "T2",
+      "category": "cgt",
+      "question": "What is the 50% CGT discount?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.94,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Capital gains tax",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/in-detail/income-tax/mutuality-and-taxable-income-for-not-for-profits/other-issues/capital-gains-tax"
+        },
+        {
+          "title": "CGT discount for affordable housing",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/property-and-capital-gains-tax/cgt-discount-for-affordable-housing"
+        },
+        {
+          "title": "CGT discount",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/cgt-discount"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "tier": "T2",
+      "category": "cgt",
+      "question": "Do I pay CGT on cryptocurrency?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.2,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "How to work out and report CGT on crypto",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/how-to-work-out-and-report-cgt-on-crypto"
+        },
+        {
+          "title": "18 Capital gains 2020",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2020/supplementary-tax-return/income-questions-13-24/18-capital-gains-2020"
+        },
+        {
+          "title": "Crypto assets payments relating to employment or services",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets/crypto-assets-payments-relating-to-employment-or-services"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "tier": "T2",
+      "category": "cgt",
+      "question": "Do I pay CGT on shares?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.42,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Capital gains tax (CGT) implications",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2012/supporting-information/uxc-limited-2012-return-of-capital/capital-gains-tax-cgt-implications"
+        },
+        {
+          "title": "Share investing versus share trading",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/shares-and-similar-investments/share-investing-versus-share-trading"
+        },
+        {
+          "title": "Demergers CGT rollover for shareholders and unit holders",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/shares-and-similar-investments/demergers-cgt-rollover-for-shareholders-and-unit-holders"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "tier": "T2",
+      "category": "cgt",
+      "question": "What is a CGT event?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.5,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "18 - Capital gains 2013",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2013/supplementary-tax-return/income-questions-13-24/18-capital-gains-2013"
+        },
+        {
+          "title": "Capital gains tax",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/in-detail/income-tax/mutuality-and-taxable-income-for-not-for-profits/other-issues/capital-gains-tax"
+        },
+        {
+          "title": "About question 18",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2011/supplementary-tax-return/income-questions-13-24/18-capital-gains-2011"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "tier": "T2",
+      "category": "cgt",
+      "question": "How do I calculate my capital gain?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 4.07,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "18 Capital gains 2023",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2023/supplementary-tax-return/income-questions-13-24/18-capital-gains-2023"
+        },
+        {
+          "title": "18 Capital gains 2020",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2020/supplementary-tax-return/income-questions-13-24/18-capital-gains-2020"
+        },
+        {
+          "title": "Calculating the extra capital gain",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/trusts/trust-income-losses-and-capital-gains/streaming-trust-capital-gains-and-franked-distributions/capital-gains/calculating-the-extra-capital-gain"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "tier": "T2",
+      "category": "cgt",
+      "question": "Can I offset capital losses against other income?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.75
+      },
+      "latency": 6.01,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "How to offset your losses",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/non-commercial-losses/how-to-offset-your-losses"
+        },
+        {
+          "title": "When you can claim losses on shares and units",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/shares-and-similar-investments/when-you-can-claim-losses-on-shares-and-units"
+        },
+        {
+          "title": "Offsetting current year business losses",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/business-losses/offsetting-current-year-losses"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "tier": "T2",
+      "category": "foreign_income",
+      "question": "Do I pay tax on foreign income?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.4,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Working on an approved overseas project",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/foreign-and-worldwide-income/tax-exempt-income-from-foreign-employment/working-on-an-approved-overseas-project"
+        },
+        {
+          "title": "20 Foreign source income and foreign assets or property 2014",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2014/supplementary-tax-return/income-questions-13-24/20-foreign-source-income-and-foreign-assets-or-property-2014"
+        },
+        {
+          "title": "Exempt income from foreign service",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/foreign-and-worldwide-income/tax-exempt-income-from-foreign-employment/exempt-income-from-foreign-service"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "tier": "T2",
+      "category": "foreign_income",
+      "question": "What is a foreign income tax offset?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.68,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Claiming a foreign income tax offset",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/claiming-a-foreign-income-tax-offset"
+        },
+        {
+          "title": "20 Foreign source income and foreign assets or property 2022",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2022/supplementary-tax-return/income-questions-13-24/20-foreign-source-income-and-foreign-assets-or-property-2022"
+        },
+        {
+          "title": "myTax 2018 Foreign income tax offset",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2018/tax-offsets/other-tax-offsets/foreign-income-tax-offset"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "tier": "T2",
+      "category": "foreign_income",
+      "question": "How does the residency test work?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 2.88,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Residency – the resides test",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-resides-test"
+        },
+        {
+          "title": "Residency – the domicile test",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-domicile-test"
+        },
+        {
+          "title": "Other issues or arrangements that attract our attention in privately owned and wealthy groups",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/what-attracts-our-attention/international-transactions/other-issues-or-arrangements-that-attract-our-attention"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "tier": "T2",
+      "category": "foreign_income",
+      "question": "Do I need to declare overseas bank interest?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.82,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Investing in bank accounts and income bonds",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/investing-in-bank-accounts-and-income-bonds"
+        },
+        {
+          "title": "Investment income",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/investment-income"
+        },
+        {
+          "title": "Australian resident foreign and worldwide income",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/foreign-and-worldwide-income/australian-resident-foreign-and-worldwide-income"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "tier": "T2",
+      "category": "foreign_income",
+      "question": "What is a certificate of residency?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.01,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Certificate of residency and overseas tax relief form",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/certificate-of-residency-and-overseas-tax-relief-form"
+        },
+        {
+          "title": "Certificate of residency and overseas tax relief form",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/certificate-of-residency-and-overseas-tax-relief-form"
+        },
+        {
+          "title": "Obligations",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/payments-you-need-to-withhold-from/withholding-from-investment-income/investment-income-and-royalties-paid-to-foreign-residents/obligations"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "tier": "T2",
+      "category": "foreign_income",
+      "question": "Do I pay tax when moving to Australia?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 5,
+        "mrr": 0.2,
+        "kw_recall": 0.75
+      },
+      "latency": 5.4,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Residency and source of income",
+          "url": "https://www.ato.gov.au/individuals-and-families/financial-difficulties-and-disasters/covid-19-tax-support/support-for-individuals-employees-and-businesses/residency-and-source-of-income"
+        },
+        {
+          "title": "Australian resident foreign and worldwide income",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/foreign-and-worldwide-income/australian-resident-foreign-and-worldwide-income"
+        },
+        {
+          "title": "Selling goods into Australia",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/doing-business-in-australia-or-overseas/selling-goods-into-australia"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "tier": "T2",
+      "category": "investments",
+      "question": "How are dividends taxed in Australia?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.92,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Dividends",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2016/income/australian-income-or-losses-from-investments-or-property/dividends"
+        },
+        {
+          "title": "Overview",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/payments-you-need-to-withhold-from/withholding-from-investment-income/investment-income-and-royalties-paid-to-foreign-residents/overview"
+        },
+        {
+          "title": "myTax 2024 Dividends",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2024/income/australian-income-or-losses-from-investments-or-property/dividends"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "tier": "T2",
+      "category": "investments",
+      "question": "What are franking credits?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.75
+      },
+      "latency": 5.09,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Franking account",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/imputation/paying-dividends-and-other-distributions/franking-account"
+        },
+        {
+          "title": "Franking credit trading",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/imputation/integrity-rules/franking-credit-trading"
+        },
+        {
+          "title": "Franking implications",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/private-company-benefits-division-7a-dividends/in-detail/division-7a-franking-implications"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "tier": "T2",
+      "category": "investments",
+      "question": "Can I claim deductions on my rental property?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.42,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Common property expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-expenses/common-property-expenses"
+        },
+        {
+          "title": "Rental properties after a natural disaster",
+          "url": "https://www.ato.gov.au/individuals-and-families/financial-difficulties-and-disasters/natural-disaster-support/recovery-following-natural-disasters/rental-properties-after-a-natural-disaster"
+        },
+        {
+          "title": "Rental property deductions – supporting information",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/object-to-a-decision/what-to-include-in-your-objection/supporting-information-to-provide/deductions/rental-property-deductions"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "tier": "T2",
+      "category": "investments",
+      "question": "What is negative gearing?",
+      "retrieval": {
+        "url_match": false,
+        "rank": null,
+        "mrr": 0.0,
+        "kw_recall": 0.5
+      },
+      "latency": 5.86,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Findings report APA program review",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/pricing/findings-report-apa-program-review"
+        },
+        {
+          "title": "IRPD debt factoring or debt securitisation",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/pricing/transfer-pricing/country-by-country-reporting/local-file-instructions-2017/local-file-part-a/irpd-debt-factoring-or-debt-securitisation"
+        },
+        {
+          "title": "The effect of zero or negative LIBOR on the application of section 160ZZZA of the Income Tax Assessment Act 1936 (ITAA 1936)",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/making-payments-to-foreign-residents/the-effect-of-zero-or-negative-libor"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "tier": "T2",
+      "category": "investments",
+      "question": "Do I pay tax on interest from savings?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.32,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Investing in bank accounts and income bonds",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/investing-in-bank-accounts-and-income-bonds"
+        },
+        {
+          "title": "Interest",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2016/income/australian-income-or-losses-from-investments-or-property/interest"
+        },
+        {
+          "title": "myTax 2018 Interest",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2018/income/australian-income-or-losses-from-investments-or-property/interest"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "tier": "T2",
+      "category": "life_events",
+      "question": "What happens to tax when someone dies?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.53,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Checklist: what to do when someone dies",
+          "url": "https://www.ato.gov.au/individuals-and-families/deceased-estates/checklist-what-to-do-when-someone-dies"
+        },
+        {
+          "title": "Estate planning",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/tax-governance/tax-governance-guide-for-privately-owned-groups/estate-planning"
+        },
+        {
+          "title": "Doing a final tax return for the deceased person",
+          "url": "https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-a-final-tax-return-for-the-deceased-person"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "tier": "T2",
+      "category": "life_events",
+      "question": "What tax support is available after a natural disaster?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 3,
+        "mrr": 0.3333333333333333,
+        "kw_recall": 0.75
+      },
+      "latency": 5.25,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Supporting your small business",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/running-your-own-business/supporting-your-small-business"
+        },
+        {
+          "title": "A word from Tom Wheeler - February 2026",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/not-for-profit-newsroom/a-word-from-tom-wheeler-february-2026"
+        },
+        {
+          "title": "Natural disaster support grants and deductions for business",
+          "url": "https://www.ato.gov.au/individuals-and-families/financial-difficulties-and-disasters/natural-disaster-support/recovery-following-natural-disasters/natural-disaster-support-grants-and-deductions-for-business"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "tier": "T2",
+      "category": "life_events",
+      "question": "Can I get tax concessions as a person with disability?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.31,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Modifications for people with a disability",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/luxury-car-tax/when-lct-doesn-t-apply/modifications-for-people-with-a-disability"
+        },
+        {
+          "title": "T5 Total net medical expenses 2015",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2015/supplementary-tax-return/tax-offset-questions-t3-t9/t5-total-net-medical-expenses-2015"
+        },
+        {
+          "title": "Getting endorsed for tax concessions or as a DGR",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/getting-started/getting-endorsed-for-tax-concessions-or-as-a-dgr"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "tier": "T2",
+      "category": "life_events",
+      "question": "What is the seniors and pensioners tax offset?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 4.5,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Seniors and pensioners - includes self-funded retirees",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2016/tax-offsets/seniors-and-pensioners"
+        },
+        {
+          "title": "T1 Seniors and pensioners (includes self-funded retirees) 2021",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2021/tax-return/tax-offset-questions-t1-t2/t1-seniors-and-pensioners-tax-offset-2021"
+        },
+        {
+          "title": "myTax 2022 Seniors and pensioners (includes self-funded retirees)",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2022/tax-offsets/seniors-and-pensioners"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "tier": "T2",
+      "category": "life_events",
+      "question": "How are government payments taxed?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.75
+      },
+      "latency": 3.98,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "How government payments received due to COVID-19 affect your tax",
+          "url": "https://www.ato.gov.au/individuals-and-families/financial-difficulties-and-disasters/covid-19-tax-support/support-for-individuals-employees-and-businesses/how-government-payments-received-due-to-covid-19-affect-your-tax"
+        },
+        {
+          "title": "Government Payments Program",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/government-entities/government-payments-program"
+        },
+        {
+          "title": "Assessable government industry payments",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2018/income/sole-trader-and-business-income-or-losses-and-partnership-or-trust-distributions/business-income-or-losses/business-income-and-expenses/assessable-government-industry-payments"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "tier": "T3",
+      "category": "abbreviations",
+      "question": "What is a TFN?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.98,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "What is a tax file number?",
+          "url": "https://www.ato.gov.au/individuals-and-families/tax-file-number/what-is-a-tax-file-number"
+        },
+        {
+          "title": "Tax in Australia: what you need to know",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/tax-in-australia-what-you-need-to-know"
+        },
+        {
+          "title": "Employee share scheme news and updates",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/employee-share-schemes/in-detail/ess-news-and-updates"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "tier": "T3",
+      "category": "abbreviations",
+      "question": "What is CGT?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 6.92,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Capital gains tax",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/in-detail/income-tax/mutuality-and-taxable-income-for-not-for-profits/other-issues/capital-gains-tax"
+        },
+        {
+          "title": "What is capital gains tax?",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/what-is-capital-gains-tax"
+        },
+        {
+          "title": "CGT and depreciating assets",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/assets-and-property/capital-gains-tax-for-business-assets/depreciating-assets-and-cgt"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "tier": "T3",
+      "category": "abbreviations",
+      "question": "What is PAYG?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.58,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Pay as you go (PAYG) instalments",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/payg-instalments"
+        },
+        {
+          "title": "New to PAYG instalments?",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/not-for-profit-newsroom/new-to-payg-instalments"
+        },
+        {
+          "title": "PAYG withholding annual reports",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/payg-withholding-annual-reports"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "tier": "T3",
+      "category": "abbreviations",
+      "question": "What does DASP stand for?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 4,
+        "mrr": 0.25,
+        "kw_recall": 1.0
+      },
+      "latency": 4.09,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Working holiday makers",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers"
+        },
+        {
+          "title": "Pacific Australia Labour Mobility scheme",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/pacific-australia-labour-mobility-scheme"
+        },
+        {
+          "title": "Returning to your home country",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/returning-to-your-home-country"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "tier": "T3",
+      "category": "abbreviations",
+      "question": "What is an ABN?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.69,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Australian business number (ABN) for non-residents",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/foreign-residents-doing-business-in-australia/australian-business-number-abn-for-non-residents"
+        },
+        {
+          "title": "ABN registration for not-for-profits",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/getting-started/in-detail/registration/abn-registration-for-not-for-profits"
+        },
+        {
+          "title": "How to lodge your ESS annual report electronically",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/employee-share-schemes/in-detail/employer-reporting-requirements/how-to-lodge-your-employee-share-scheme-annual-report-electronically"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "tier": "T3",
+      "category": "natural_language",
+      "question": "How much can I earn before paying tax?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 6.45,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "How to claim the tax-free threshold",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/how-to-claim-the-tax-free-threshold"
+        },
+        {
+          "title": "Preparing for a potential tax bill",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/sharing-economy-and-tax/preparing-for-a-potential-tax-bill"
+        },
+        {
+          "title": "Multiple jobs or change of job",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/multiple-jobs-or-change-of-job"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "tier": "T3",
+      "category": "natural_language",
+      "question": "I just started my first job, what do I need to do about tax?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 1.0
+      },
+      "latency": 5.98,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Tax for employees",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/working-as-an-employee/tax-for-employees"
+        },
+        {
+          "title": "Lodge your first tax return",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/how-to-lodge-your-tax-return/lodging-your-first-tax-return"
+        },
+        {
+          "title": "Get ready for business",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/our-focus-areas-for-small-business/small-business-focus-areas/get-ready-for-business"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "tier": "T3",
+      "category": "natural_language",
+      "question": "My employer isn't paying my super, what should I do?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.65,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Super health check",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/keeping-track-of-your-super/super-health-check"
+        },
+        {
+          "title": "Overdue super guarantee payment",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-and-late-super-guarantee-payments/the-super-guarantee-charge/overdue-super-guarantee-payment"
+        },
+        {
+          "title": "Superannuation and the sharing economy",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/sharing-economy-and-tax/superannuation-and-the-sharing-economy"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "tier": "T3",
+      "category": "natural_language",
+      "question": "I sold my house, do I owe tax?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 1.0
+      },
+      "latency": 4.76,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "21 Rent 2020",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2020/supplementary-tax-return/income-questions-13-24/21-rent-2020"
+        },
+        {
+          "title": "Owning real property in Australia",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/foreign-residents-doing-business-in-australia/owning-real-property-in-australia"
+        },
+        {
+          "title": "Holiday homes",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/holiday-homes"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "tier": "T3",
+      "category": "natural_language",
+      "question": "I work two jobs, how does tax work?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 3,
+        "mrr": 0.3333333333333333,
+        "kw_recall": 0.5
+      },
+      "latency": 5.02,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Tax for employees",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/working-as-an-employee/tax-for-employees"
+        },
+        {
+          "title": "Types of not-for-profit workers",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/your-obligations-to-volunteers-employees-and-contractors/types-of-not-for-profit-workers"
+        },
+        {
+          "title": "Multiple jobs or change of job",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/multiple-jobs-or-change-of-job"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "tier": "T3",
+      "category": "multi_part",
+      "question": "I work from home 3 days a week and drive to the office 2 days, what can I claim?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.36,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Trips you can and can't claim",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/cars-transport-and-travel/trips-you-can-and-can-t-claim"
+        },
+        {
+          "title": "D5 Other work-related expenses 2022",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2022/tax-return/deduction-questions-d1-d10/d5-other-work-related-expenses-2022"
+        },
+        {
+          "title": "Engineer expenses T–W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/e-k/engineers-income-and-work-related-deductions/deductions-for-work-expenses/engineer-expenses-tw"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "tier": "T3",
+      "category": "multi_part",
+      "question": "I'm a nurse who buys my own uniform and does overtime, what deductions can I claim?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.3333333333333333
+      },
+      "latency": 5.94,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Nurses and midwives expenses A–F",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/nurses-and-midwives-income-and-work-related-deductions/deductions-for-work-expenses/nurses-and-midwives-expenses-af"
+        },
+        {
+          "title": "Paramedic expenses G–O",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/paramedics-income-and-work-related-deductions/deductions-for-work-expenses/paramedic-expenses-go"
+        },
+        {
+          "title": "Medical professional expenses G–O",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/a-d/doctor-specialist-and-other-medical-professionals-income-and-work-related-deductions/deductions-for-work-expenses/medical-professional-expenses-go"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "tier": "T3",
+      "category": "multi_part",
+      "question": "I'm a student from overseas on a visa, do I need to pay tax and lodge a return?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 1.0
+      },
+      "latency": 4.94,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Lodge a non-lodgment advice",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/how-to-lodge-your-tax-return/lodge-a-non-lodgment-advice"
+        },
+        {
+          "title": "Foreign and temporary residents",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency/foreign-and-temporary-residents"
+        },
+        {
+          "title": "Studying in Australia",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/studying-in-australia"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "tier": "T3",
+      "category": "multi_part",
+      "question": "I have a rental property and a share portfolio, how do capital gains work?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.06,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "myTax 2021 Capital gains or losses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2021/income/australian-income-or-losses-from-investments-or-property/capital-gains-or-losses"
+        },
+        {
+          "title": "Capital gains tax when selling your rental property",
+          "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/property-and-capital-gains-tax/cgt-when-selling-your-rental-property"
+        },
+        {
+          "title": "myTax 2022 Capital gains or losses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2022/income/australian-income-or-losses-from-investments-or-property/capital-gains-or-losses"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "tier": "T3",
+      "category": "multi_part",
+      "question": "I'm leaving Australia permanently after working here for 2 years, what do I need to do?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 5.83,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Lodge your tax return before leaving Australia",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/how-to-lodge-your-tax-return/lodge-your-tax-return-before-leaving-australia"
+        },
+        {
+          "title": "Living overseas and remaining an Australian tax-resident",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/living-overseas-and-remaining-an-australian-tax-resident"
+        },
+        {
+          "title": "Australian residency if you're on a working holiday or visit",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/australian-residency-if-you-re-on-a-working-holiday-or-visit"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "tier": "T3",
+      "category": "negative",
+      "question": "Should I invest in property or shares for tax benefits?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.25
+      },
+      "latency": 3.84,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "More information",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2012/supporting-information/uxc-limited-2012-return-of-capital/more-information"
+        },
+        {
+          "title": "Selling shared assets",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/sharing-economy-and-tax/sharing-assets-excluding-accommodation/selling-shared-assets"
+        },
+        {
+          "title": "Investment income",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/investment-income"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "tier": "T3",
+      "category": "negative",
+      "question": "How do I set up a company to minimise my tax?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.6666666666666666
+      },
+      "latency": 4.84,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Work out your business taxable income",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/work-out-taxable-income"
+        },
+        {
+          "title": "Deregistering a company",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/changing-selling-or-closing-your-business/deregistering-a-company"
+        },
+        {
+          "title": "Take control before interest on ATO debt costs you more",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/small-business-newsroom/take-control-before-interest-on-ato-debt-costs-you-more"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "tier": "T3",
+      "category": "negative",
+      "question": "What is the GST rate for my business?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 1.0
+      },
+      "latency": 6.49,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Goods and services tax",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/in-detail/income-tax/mutuality-and-taxable-income-for-not-for-profits/other-issues/goods-and-services-tax"
+        },
+        {
+          "title": "GST governance and risk management: government",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/government-entities/gst-for-government/gst-governance-and-risk-management-government"
+        },
+        {
+          "title": "Eligibility for SAMs",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/gst-and-food/gst-for-food-retailers-simplified-accounting-methods/eligibility-for-sams"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "tier": "T3",
+      "category": "negative",
+      "question": "How do I evade tax legally?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 6.98,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Wealth Program tackling serious tax avoidance",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/what-you-should-know/wealth-program-tackling-serious-tax-avoidance"
+        },
+        {
+          "title": "Income from illegal activities: losses and outgoings",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/business-losses/income-from-illegal-activities-losses-and-outgoings"
+        },
+        {
+          "title": "What attracts our attention in small business",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/our-focus-areas-for-small-business/what-attracts-our-attention-in-small-business"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "tier": "T3",
+      "category": "negative",
+      "question": "What is the weather in Sydney?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.5
+      },
+      "latency": 5.91,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Fringe benefits tax – remote areas",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/fringe-benefits-tax/types-of-fringe-benefits/accommodation-and-location-related-fringe-benefits/remote-area-fbt-concessions/fringe-benefits-tax-remote-areas"
+        },
+        {
+          "title": "Straight from the source - July 2025",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/not-for-profit-newsroom/straight-from-the-source-july-2025"
+        },
+        {
+          "title": "What is super",
+          "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/what-is-super"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "tier": "T4",
+      "category": "accuracy",
+      "question": "What is the exact tax-free threshold amount for 2024-25?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 7.51,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "myTax 2025 Part-year tax-free threshold",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2025/adjustments/part-year-tax-free-threshold"
+        },
+        {
+          "title": "How to claim the tax-free threshold",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/how-to-claim-the-tax-free-threshold"
+        },
+        {
+          "title": "myTax 2024 Part-year tax-free threshold",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2024/adjustments/part-year-tax-free-threshold"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "tier": "T4",
+      "category": "accuracy",
+      "question": "What is the working from home fixed rate per hour?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 4,
+        "mrr": 0.25,
+        "kw_recall": 1.0
+      },
+      "latency": 5.3,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "D5 Other work-related expenses 2023",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2023/tax-return/deduction-questions-d1-d10/d5-other-work-related-expenses-2023"
+        },
+        {
+          "title": "2022 Non-resident foreign income",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2022/reporting-non-resident-foreign-income/non-resident-foreign-income-amendment"
+        },
+        {
+          "title": "D5 Other work-related expenses 2022",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2022/tax-return/deduction-questions-d1-d10/d5-other-work-related-expenses-2022"
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "tier": "T4",
+      "category": "accuracy",
+      "question": "What is the Medicare levy percentage?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 2,
+        "mrr": 0.5,
+        "kw_recall": 1.0
+      },
+      "latency": 6.79,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Paying tax on multiple sources of income",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/paying-tax-on-multiple-sources-of-income"
+        },
+        {
+          "title": "M2 - Medicare levy surcharge (MLS) 2013",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2013/tax-return/medicare-levy-questions-m1-m2/m2-medicare-levy-surcharge-2013"
+        },
+        {
+          "title": "What is the Medicare levy?",
+          "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/what-is-the-medicare-levy"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "tier": "T4",
+      "category": "accuracy",
+      "question": "What is the cents per km rate for car expenses?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 9.25,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Cents per kilometre method",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/deductions/deductions-for-motor-vehicle-expenses/cents-per-kilometre-method"
+        },
+        {
+          "title": "myTax 2021 Work-related car expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2021/deductions/work-related-expenses/car-expenses"
+        },
+        {
+          "title": "Work-related car expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2016/deductions/work-related-expenses/car-expenses"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "tier": "T4",
+      "category": "accuracy",
+      "question": "What is the maximum km you can claim with cents per km method?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 8.87,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Peer-to-peer car sharing deductions",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/sharing-economy-and-tax/sharing-assets-excluding-accommodation/income-and-deductions-for-asset-sharing/peer-to-peer-car-sharing"
+        },
+        {
+          "title": "Income and deductions for ride-sourcing",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/sharing-economy-and-tax/ride-sourcing/income-and-deductions-for-ride-sourcing"
+        },
+        {
+          "title": "myTax 2021 Work-related car expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2021/deductions/work-related-expenses/car-expenses"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "tier": "T4",
+      "category": "accuracy",
+      "question": "What is the WHM tax rate on the first $45,000?",
+      "retrieval": {
+        "url_match": false,
+        "rank": null,
+        "mrr": 0.0,
+        "kw_recall": 1.0
+      },
+      "latency": 12.22,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Taxation of Australian resident WHMs from NDA countries",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/taxation-of-australian-resident-whms-from-nda-countries"
+        },
+        {
+          "title": "Taxation of Australian resident WHMs from NDA countries",
+          "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/taxation-of-australian-resident-whms-from-nda-countries"
+        },
+        {
+          "title": "Allocating franking credits",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/imputation/paying-dividends-and-other-distributions/allocating-franking-credits"
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "tier": "T4",
+      "category": "accuracy",
+      "question": "What is the minimum donation amount for a tax deduction?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 11.18,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "myTax 2019 Gifts or donations",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2019/deductions/deductions-for-donations-investments-and-managing-your-tax/gifts-or-donations"
+        },
+        {
+          "title": "Special circumstances and glossary 2015",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2015/supporting-information/special-circumstances-and-glossary-2015"
+        },
+        {
+          "title": "Gifts and donations",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/gifts-and-donations"
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "tier": "T4",
+      "category": "completeness",
+      "question": "Can I claim self-education expenses if the course is not related to my current job?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.5
+      },
+      "latency": 8.1,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "D4 Work-related self-education expenses 2022",
+          "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/paper-tax-return-instructions/2022/tax-return/deduction-questions-d1-d10/d4-work-related-self-education-expenses-2022"
+        },
+        {
+          "title": "Apprentice and trainee expenses P–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/a-d/apprentices-and-trainees-income-and-work-related-deductions/deductions-for-work-expenses/apprentice-and-trainee-expenses-ps"
+        },
+        {
+          "title": "Direct carer expenses P–S",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/a-d/community-workers-and-direct-carers-income-and-work-related-deductions/deductions-for-work-expenses/direct-carer-expenses-ps"
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "tier": "T4",
+      "category": "completeness",
+      "question": "What records do I need for work from home claims?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 0.5
+      },
+      "latency": 8.7,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Home phone and internet expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/tools-computers-and-items-you-use-for-work/home-phone-and-internet-expenses"
+        },
+        {
+          "title": "Record keeping for work expenses",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/l-q/mining-site-employees-income-and-work-related-deductions/record-keeping-for-work-expenses"
+        },
+        {
+          "title": "Direct carer expenses T–W",
+          "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/guides-for-occupations-and-industries/a-d/community-workers-and-direct-carers-income-and-work-related-deductions/deductions-for-work-expenses/direct-carer-expenses-tw"
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "tier": "T4",
+      "category": "safety",
+      "question": "Should I claim the tax-free threshold if I have two jobs?",
+      "retrieval": {
+        "url_match": true,
+        "rank": 1,
+        "mrr": 1.0,
+        "kw_recall": 1.0
+      },
+      "latency": 10.96,
+      "answer": null,
+      "grade": {},
+      "top3": [
+        {
+          "title": "Multiple jobs or change of job",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/multiple-jobs-or-change-of-job"
+        },
+        {
+          "title": "Paying tax on multiple sources of income",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/paying-tax-on-multiple-sources-of-income"
+        },
+        {
+          "title": "Paying tax on multiple sources of income",
+          "url": "https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/tax-free-threshold/paying-tax-on-multiple-sources-of-income"
+        }
+      ]
+    }
+  ]
+}

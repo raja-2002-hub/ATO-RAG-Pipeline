@@ -1,0 +1,37 @@
+# Secrets
+.env
+
+# Data (large files — keep in cloud storage or DVC)
+data/raw_html/
+data/faiss.index
+data/bm25.pkl
+data/meta.pkl
+data/chunks.jsonl
+data/docs.jsonl
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Logs
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models (downloaded at runtime)
+models/
+.cache/
