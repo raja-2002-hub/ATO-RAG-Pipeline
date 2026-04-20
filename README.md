@@ -1,4 +1,4 @@
-# ATO Tax Advisor — RAG Pipeline
+# # ATO Search Assistant — RAG Pipeline
 
 A production-grade Retrieval-Augmented Generation system that answers Australian tax questions using official ATO (Australian Taxation Office) source documents. Every answer is grounded in real ATO content with clickable citations users can verify.
 

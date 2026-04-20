@@ -105,9 +105,9 @@ async def lifespan(app: FastAPI):
 
 # ──────────────────── App ────────────────────
 app = FastAPI(
-    title="ATO Tax Assistant",
+    title="ATO Search Assistant",
     version="1.0.0",
-    description="RAG-powered Australian tax information assistant",
+    description="RAG-powered search system for official ATO information",
     lifespan=lifespan,
 )
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ATO Tax Advisor</title>
+<title>ATO Search Assistant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -818,7 +818,7 @@ body {
             <path d="M3 9l6 3.5L15 9"/>
           </svg>
         </div>
-        <div class="logo-text">ATO Advisor<span>RAG</span></div>
+        <div class="logo-text">ATO Search Assistant<span>RAG</span></div>
       </div>
       <button class="new-chat-btn" id="newChatBtn">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg>
@@ -927,7 +927,7 @@ body {
 
   /* ─── Config ─── */
   const config = {
-    baseUrl: 'http://localhost:8000',
+    baseUrl: 'window.location.origin',
     endpoint: '/ask'
   };
 
@@ -1048,7 +1048,7 @@ body {
     div.innerHTML = `
       <div class="msg-header">
         <div class="msg-avatar">A</div>
-        <span class="msg-sender">Advisor</span>
+        <span class="msg-sender">Assistant</span>
       </div>
       <div class="thinking">
         <span class="thinking-label">Searching ATO sources</span>
@@ -1066,7 +1066,7 @@ body {
     node.innerHTML = `
       <div class="msg-header">
         <div class="msg-avatar">A</div>
-        <span class="msg-sender">Advisor</span>
+        <span class="msg-sender">Assistant</span>
         <span class="msg-time">${now()}</span>
       </div>
       <div class="msg-body">${parseAnswer(data.answer || 'No answer returned.', refs)}</div>
@@ -1097,7 +1097,7 @@ body {
     node.innerHTML = `
       <div class="msg-header">
         <div class="msg-avatar">A</div>
-        <span class="msg-sender">Advisor</span>
+        <span class="msg-sender">Assistant</span>
         <span class="msg-time">${now()}</span>
       </div>
       <div class="error-block">
