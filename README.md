@@ -1,22 +1,61 @@
-# # ATO Search Assistant — RAG Pipeline
+# ATO Search Assistant — RAG Pipeline
 
 A production-grade Retrieval-Augmented Generation system that answers Australian tax questions using official ATO (Australian Taxation Office) source documents. Every answer is grounded in real ATO content with clickable citations users can verify.
 
-Built as a complete, end-to-end RAG pipeline: web crawling → content processing → hybrid indexing → retrieval → reranking → generation → evaluated frontend.
+Built as a complete, end-to-end RAG pipeline: web crawling → content processing → hybrid indexing → intelligent query expansion → retrieval → reranking → generation → evaluated frontend.
+
+**Live Demo:** [https://huggingface.co/spaces/rajaRajaseelan2002/ato-search-assistant](https://huggingface.co/spaces/rajaRajaseelan2002/ato-search-assistant)
+
+**GitHub:** [https://github.com/raja-2002-hub/ATO-RAG-Pipeline](https://github.com/raja-2002-hub/ATO-RAG-Pipeline)
 
 ---
 
 ## What it does
 
-Ask a tax question in plain English. The system searches 30,828 chunks from 7,517 ATO pages, retrieves the most relevant passages using hybrid search (dense + sparse), reranks them with a cross-encoder, and generates an answer with inline citations pointing to the exact ATO source pages.
+Ask a tax question in plain English — even with typos or vague phrasing. The system understands what you actually need, searches 30,828 chunks from 7,517 ATO pages using multiple expanded queries, reranks with a cross-encoder, and generates a comprehensive answer with inline citations.
 
-**Example:**
+**Example — vague question, intelligent answer:**
 
-> **Q:** What is a tax file number and how do I get one?
+> **Q:** i want to start uber eats delivery what do i need
 >
-> **A:** A tax file number (TFN) is your personal reference number in the tax and superannuation systems, and it is free to apply for one. You can apply at any age, and should do so before starting work to avoid paying more tax **[1][2]**. If you apply online using a Digital ID, you must be at least 15 years old **[2]**. It can take up to 28 days to process **[2]**.
+> The system expands this into 3 search queries:
+> - "ABN requirements for Uber food delivery driver"
+> - "sole trader tax obligations gig economy"
+> - "GST registration threshold delivery services"
 >
-> *Sources: [1] What is a tax file number — ato.gov.au  [2] Tax in Australia: what you need to know — ato.gov.au*
+> **A:** To do Uber Eats delivery in Australia, you'll need an ABN (Australian Business Number) since you'll be operating as a sole trader **[1]**. You should also register for GST if your annual turnover hits $75,000 — and ride-sourcing services require GST registration regardless of turnover **[2]**. For your tax return, report all delivery income under the business items section using your TFN **[1]**, and you can claim deductions for expenses like fuel and vehicle costs **[3]**.
+
+**Example — follow-up conversation:**
+
+> **Q:** explain it in simple terms
+>
+> The system uses conversation history to understand "it" refers to the Uber delivery requirements, and gives a simplified explanation without the user repeating the topic.
+
+---
+
+## Intelligence Pipeline
+
+Every query goes through a preprocessing step before retrieval:
+
+```
+User input → Understand (spell fix, intent, query expand) → Multi-search → Generate
+                    │                                              │
+              ┌─────┴──────┐                               ┌──────┴───────┐
+              │ "general"  │                               │ "tax"        │
+              │ greeting → │                               │ 1-3 expanded │
+              │ friendly   │                               │ queries      │
+              │ reply      │                               │ → retrieve   │
+              │            │                               │ → merge      │
+              │ off-topic →│                               │ → rerank     │
+              │ redirect   │                               │ → generate   │
+              └────────────┘                               └──────────────┘
+```
+
+- **Spell correction**: "wat is tfn" → "what is a TFN"
+- **Intent routing**: Greetings get friendly replies, off-topic gets redirected, tax questions go through RAG
+- **Query expansion**: "can I Uber with a TFN?" generates 3 searches covering ABN, sole trader, and GST
+- **Conversation memory**: Follow-ups like "explain it simply" use chat history for context
+- **Scope enforcement**: Non-tax questions ("what is a linked list?") are politely redirected
 
 ---
 
@@ -26,31 +65,31 @@ Ask a tax question in plain English. The system searches 30,828 chunks from 7,51
 ┌─────────────────────────────────────────────────────────────────┐
 │                         FRONTEND                                │
 │              tax-advisor.html (vanilla JS)                      │
-│         Chat UI · Citation links · Source cards                  │
+│    Chat UI · Citations · Sources · Conversation memory          │
 └────────────────────────┬────────────────────────────────────────┘
-                         │ POST /ask {q: "..."}
+                         │ POST /ask {q, messages}
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                       API LAYER                                 │
-│                  FastAPI + Pydantic                              │
-│     /ask  ·  /search  ·  /diag  ·  /health                     │
-│  Request tracing · Structured logging · Error handling          │
+│                    QUERY INTELLIGENCE                           │
+│         Spell fix · Intent classify · Query expansion           │
+│              1 LLM call → 1-3 search queries                   │
 └────────┬───────────────────────────────────────┬────────────────┘
          │                                       │
          ▼                                       ▼
 ┌─────────────────────┐             ┌────────────────────────────┐
-│    RETRIEVAL         │             │       GENERATION           │
+│  MULTI-RETRIEVAL     │             │       GENERATION           │
 │                      │             │                            │
-│  ┌───────────────┐  │             │  System prompt + evidence  │
-│  │  FAISS Dense  │  │             │         ▼                  │
-│  │  (30,828 vecs)│──┤  RRF        │    GPT-4o-mini             │
-│  └───────────────┘  │  Fusion     │         ▼                  │
-│  ┌───────────────┐  │──► Rerank   │  Answer with [1][2] cites  │
-│  │  BM25 Sparse  │──┤   (cross-   │                            │
+│  For each query:     │             │  Conversation history      │
+│  ┌───────────────┐  │             │  + user need hint          │
+│  │  FAISS Dense  │  │             │  + evidence                │
+│  │  (30,828 vecs)│──┤  RRF        │         ▼                  │
+│  └───────────────┘  │  Fusion     │    GPT-4o-mini             │
+│  ┌───────────────┐  │──► Rerank   │         ▼                  │
+│  │  BM25 Sparse  │──┤   (cross-   │  Answer with [1][2] cites  │
 │  │  (keyword)    │  │   encoder)  │                            │
 │  └───────────────┘  │      ▼      │                            │
 │                      │    MMR      │                            │
-│                      │  (diverse)  │                            │
+│  Merge + deduplicate │  (diverse)  │                            │
 └─────────────────────┘             └────────────────────────────┘
          ▲
          │ Offline indexing pipeline
@@ -130,10 +169,12 @@ tests/test_pipeline.py  ·  45 passed in 87s
 | Fusion | Reciprocal Rank Fusion (RRF) | Proven method to combine dense + sparse without score calibration |
 | Reranker | cross-encoder/ms-marco-MiniLM-L-6-v2 | Lightweight cross-encoder, runs on CPU, improves precision |
 | Diversity | MMR (Maximal Marginal Relevance) | Prevents top-5 from being 5 chunks from the same page |
+| Query Intelligence | GPT-4o-mini (preprocessing) | Single LLM call handles spell fix, intent, and query expansion |
 | Embeddings | all-MiniLM-L6-v2 | Fast, runs locally, no API cost for indexing |
 | Generation | GPT-4o-mini | Best cost/quality ratio for grounded Q&A |
 | API | FastAPI + Pydantic | Type-safe, async-ready, auto-generated docs at /docs |
 | Frontend | Vanilla HTML/CSS/JS | No build step, single file, works anywhere |
+| Deployment | HuggingFace Spaces (Docker) | Free hosting, handles large files, always available |
 
 ---
 
@@ -142,7 +183,7 @@ tests/test_pipeline.py  ·  45 passed in 87s
 ```
 ATO-RAG_Pipeline/
 ├── api/
-│   └── app.py                  # FastAPI endpoints, error handling, request tracing
+│   └── app.py                  # FastAPI endpoints, query intelligence, request tracing
 ├── config/
 │   └── settings.py             # All config from environment variables
 ├── crawler/
@@ -158,7 +199,7 @@ ATO-RAG_Pipeline/
 │   ├── retriever.py            # Hybrid search + RRF + MMR + score adjustments
 │   └── reranker.py             # Cross-encoder reranker
 ├── frontend/
-│   └── tax-advisor.html        # Chat UI with citation links
+│   └── tax-advisor.html        # Chat UI with citations + conversation memory
 ├── tests/
 │   └── test_pipeline.py        # 45 automated tests
 ├── data/
@@ -188,8 +229,8 @@ ATO-RAG_Pipeline/
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/ATO-RAG_Pipeline.git
-cd ATO-RAG_Pipeline
+git clone https://github.com/raja-2002-hub/ATO-RAG-Pipeline.git
+cd ATO-RAG-Pipeline
 
 pip install -r requirements.txt
 
@@ -200,14 +241,10 @@ cp .env.example .env
 ### Run
 
 ```bash
-# Start the API
+# Start the server (serves both API and frontend)
 python -m uvicorn api.app:app --host 0.0.0.0 --port 8000
 
-# In another terminal — serve the frontend
-cd frontend
-python -m http.server 3000
-
-# Open http://localhost:3000/tax-advisor.html
+# Open http://localhost:8000
 ```
 
 ### Docker (alternative)
@@ -249,31 +286,37 @@ python evaluate.py --compare-search
 
 ### `POST /ask`
 
-Main endpoint — retrieves evidence and generates an answer.
+Main endpoint — understands intent, expands queries, retrieves evidence, generates an answer.
 
 **Request:**
 ```json
-{"q": "What is a tax file number?"}
+{
+  "q": "wat do i need for uber delivery",
+  "messages": [
+    {"role": "user", "content": "previous question"},
+    {"role": "assistant", "content": "previous answer"}
+  ]
+}
 ```
 
 **Response:**
 ```json
 {
-  "answer": "A tax file number (TFN) is your personal reference...",
+  "answer": "To do Uber Eats delivery in Australia, you'll need an ABN...",
   "status": "answered",
   "references": [
     {
       "ref_number": 1,
-      "title": "What is a tax file number?",
-      "section": "What is a tax file number?",
-      "url": "https://www.ato.gov.au/individuals-and-families/tax-file-number/...",
-      "breadcrumb": "Individuals And Families > Tax File Number > ...",
-      "snippet": "Find out why you need a TFN..."
+      "title": "Business structures - key tax obligations",
+      "section": "Sole trader",
+      "url": "https://www.ato.gov.au/...",
+      "breadcrumb": "Businesses And Organisations > ...",
+      "snippet": "As a sole trader, you use your individual TFN..."
     }
   ],
   "disclaimer": "⚠️ This is general information only...",
   "request_id": "a3f2b1c0",
-  "elapsed_ms": 1342
+  "elapsed_ms": 3420
 }
 ```
 
@@ -293,6 +336,12 @@ Debug view — shows retrieval scores and internals.
 
 ## Design Decisions
 
+**Why intelligent query expansion?**
+Users don't know what to search for. Someone asking "can I Uber with a TFN?" doesn't know they need an ABN — that's why they're asking. The system generates 1-3 targeted search queries that cover all relevant angles, finding evidence the user didn't know to ask about.
+
+**Why conversation memory without a database?**
+The frontend holds the conversation in a JavaScript array and sends the last 3 exchanges with each request. The backend uses this to rewrite vague follow-ups ("explain it simply") into standalone queries. No database, no session storage, no complexity — the frontend is the source of truth.
+
 **Why hybrid search (dense + sparse)?**
 Dense embeddings are great at semantic matching ("how do I get a TFN" → "tax file number application"), but miss exact keyword matches that matter in tax ("Division 293 tax"). BM25 catches these. RRF fusion combines both without needing score calibration.
 
@@ -311,16 +360,19 @@ Tax rules change. Caching answers risks serving stale information about tax rate
 **Why no vector database (Pinecone, Weaviate)?**
 With 30,828 chunks, FAISS flat index fits in memory and searches in <10ms. A managed vector DB adds cost, latency, and operational complexity for zero benefit at this scale. If the corpus grew to 1M+ chunks, I'd consider it.
 
+**Why no LangChain / LangGraph?**
+The entire intelligence pipeline is two LLM calls — one to understand and expand the query, one to generate the answer. LangChain would wrap this in layers of abstraction with no added value. Raw Python is easier to debug, test, and explain in an interview.
+
 ---
 
 ## What I'd Improve With More Time
 
 - **Streaming responses** — stream LLM output token-by-token for better UX
 - **Incremental re-indexing** — currently full rebuild; would add delta updates when ATO pages change
-- **Query understanding** — classify query intent (factual, procedural, eligibility) to adjust retrieval strategy
 - **User feedback loop** — thumbs up/down on answers to build a preference dataset
 - **A/B testing framework** — compare retrieval configurations on live traffic
 - **Prompt caching** — use Anthropic/OpenAI prompt caching to reduce LLM costs by ~60%
+- **Multi-turn query planning** — for complex scenarios requiring multiple retrieval steps
 
 ---
 
